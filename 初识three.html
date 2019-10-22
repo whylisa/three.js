@@ -20,17 +20,20 @@
 			 * Sphere(球体)
 			 * Camera(相机)
 			 * Axes(轴)
+			 * scene(场景)
+			 * renderer(渲染器)
+			 * 
 			 */
 			var init = function () {
 				var scene = new THREE.Scene()
-			  var camera = new THREE.PerspectiveCamera(
-				45,window.innerWidth / window.innerHeight,0.1,1000
-				)	
+			  var camera = new THREE.PerspectiveCamera(45,window.innerWidth / window.innerHeight,0.1,1000)	
 				var renderer = new THREE.WebGLRenderer()
 				renderer.setClearColorHex(0xEEEEEE)
 				renderer.setSize(window.innerWidth,window.innerHeight)
+				
 				var axes = new THREE.AxisHelper(20)
 				scene.add(axes)
+				
 				var planeGeometry = new THREE.PlaneGeometry(60,20,1,1)
 				var planeMeterial = new THREE.MeshBasicMaterial({ color: 0xcccccc})
 				var plane = new THREE.Mesh(planeGeometry,planeMeterial)
@@ -39,9 +42,9 @@
 				plane.position.y = 0
 				plane.position.z = 0
 				scene.add(plane)
+				
 			  var cubeGeometry = new THREE.CubeGeometry(4,4,4);
 				var cubeMaterial = new THREE.MeshBasicMaterial({color: 0xff0000,wireframe: true})
-				
 				var cube = new THREE.Mesh(cubeGeometry,cubeMaterial)
 				cube.position.x = -4
 				cube.position.y = 3

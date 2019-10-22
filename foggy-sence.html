@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="../libs/three.js"></script>
+		
+		<script type="text/javascript" src="../libs/stats.js"></script>
+		<script type="text/javascript" src="../libs/dat.gui.js"></script>
+		<style>
+		    body {
+		        /* set margin to 0 and overflow to hidden, to go fullscreen */
+		        margin: 0;
+		        overflow: hidden;
+		    }
+		</style>
+		<title></title>
+	</head>
+	<body>
+		<div id="Stats-output"></div>
+		<div id="three-root"></div>
+		
+		<script type="text/javascript">
+	
+			function init() {
+				function initStats() {
+					var stats = new Stats();
+					stats.setMode(0)
+					stats.domElement.style.position = 'absolute'
+					stats.domElement.style.left = '0px'
+					stats.domElement.style.top = '0px'
+					document.getElementById('Stats-output').appendChild(stats.domElement)
+					 return stats
+				}
+				var stats = initStats()
+				var scene = new THREE.Scene()
+				
+				scene.fog = new THREE.Fog()
+			}
+		</script>
+	</body>
+</html>
